@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html";
+          charset="UTF-8" />
+    <title>list of users</title>
+    <style>
+        #content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            font-family: Helvetica;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>List of Users</h1>
+        <table cellpadding="12">
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            <tr th:each="user: ${users}">
+                <td th:text="${user.id}" />
+                <td th:text="${user.name}" />
+                <td th:text="${user.email}" />
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
